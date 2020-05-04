@@ -1,6 +1,6 @@
 {
-  "homepage": "https://lucascardev.github.io-myprofile",
-  "name": "profile-website",
+  "homepage": "https://lucascardev.github.io/myprofile",
+  "name": "myprofile",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

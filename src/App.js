@@ -8,6 +8,13 @@ import {
   FaHome,
   FaLinkedin,
   FaTooth,
+  FaHtml5,
+  FaCss3,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaJsSquare,
+  FaGit,
 } from "react-icons/fa";
 
 import {
@@ -58,6 +65,9 @@ function App() {
             <b>Email: </b> &nbsp; <a href="mailto:lucasmatheussc97@gmail.com">lucasmatheussc97@gmail.com</a>
           </p>
         </Contact>
+        <div className="techs">
+        <FaCss3 /><FaDocker /><FaHtml5 /><FaReact /><FaNodeJs /><FaJsSquare /><FaGit />
+        </div>
       </Header>
 
       <PageHolder>
@@ -98,6 +108,8 @@ function App() {
         <p>This page was build using the{" "}<a href="https://pages.github.com/"><b>GitHub Pages</b></a>{" "}
           an excelent frontend server.
         </p>
+       
+        
       </Footer>
     </Container>
   );

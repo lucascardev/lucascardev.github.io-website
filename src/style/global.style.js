@@ -14,6 +14,9 @@ export const Header = styled.header`
     flex: 1;
     padding: 8px 5px;
   }
+  @media only screen and (max-width: 800px) {
+    flex-wrap: wrap;
+  }
 flex: 1;
 background-color: cadetblue;
 display: flex;
@@ -22,6 +25,23 @@ overflow:hidden;
 /* position: absolute; */
 padding: 8px 10px;
 justify-content: space-between;
+
+.techs {
+    @media only screen and (max-width: 600px) {
+            font-size: 6vw;
+            justify-content: space-between;
+   }   
+    background: whitesmoke;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;  
+    font-size: 3vw;
+    color: #ff742b;
+    padding : 8px;
+    margin-top: 8px;
+    
+}
 `;
 
 export const Gitinfo = styled.div`
@@ -144,7 +164,7 @@ a:hover{
 export const Footer = styled.footer`
 background-color: cadetblue;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 /* position: absolute; */
 flex: 1;
 padding: 16px;

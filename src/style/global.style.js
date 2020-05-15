@@ -4,32 +4,41 @@ import styled from 'styled-components'
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-
+flex: 1;
 `;
 
-
-
-export const Header = styled.div`
+export const Header = styled.header`
 @media only screen and (max-width: 600px) {
+    flex-direction: column;
     justify-content: center;
+    flex: 1;
+    padding: 8px 5px;
   }
-position: fixed;
+flex: 1;
 background-color: cadetblue;
 display: flex;
 flex-direction: row;
+overflow:hidden;
 /* position: absolute; */
-top: 0;
-left: 0;
-right: 0;
-padding: 8px;
+padding: 8px 10px;
 justify-content: space-between;
+`;
+
+export const Gitinfo = styled.div`
+
+@media only screen and (max-width: 600px) {
+    flex-direction: row;
+  }
+display:flex;
+align-self:center;
+flex-direction: row;
 `;
 
 export const Avatar = styled.img`
 
 @media only screen and (max-width: 600px) {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
   }
 width: 60px;
 align-self: center;
@@ -40,6 +49,7 @@ border-radius: 50%;
 export const Contact = styled.div`
 @media only screen and (max-width: 600px) {
     font-size: 12px;
+    padding: 8px;
   }
  align-self: center;
  justify-content: flex-end;
@@ -53,7 +63,7 @@ p{
 export const Username = styled.h1`
 @media only screen and (max-width: 600px) {
     align-self: center;
-    font-size: 16px;
+    font-size: 28px;
   }
 color: #ff742b; 
 align-self: center;
@@ -69,58 +79,66 @@ a:hover{
 
 export const PageHolder = styled.div`
 @media only screen and (max-width: 600px) {
-    margin-top: 60px;
+    align-self: center;
+    flex:1;
   }
-  margin-top: 80px;
-padding: 32px;
-align-self: center;
-
-
+padding: 16px;
 `;
 
 export const Main = styled.div`
+@media only screen and (max-width: 600px) {
+  }
+flex: 1;
 padding: 32px;
 background-color: cadetblue;
 color: whitesmoke;
 border-radius: 3px;
 h1 {
-    
+    text-align: center;
+}
+h3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center;
 }
 p {
     margin-top: 16px;
+    text-align: center;
     margin-bottom: 16px;
-
 }
 .linkholder {
+    background: whitesmoke;
+    border-radius: 4px;
     display: flex;
-    width: 50%;
+    justify-content:center;
     flex-direction: row;
     a{ 
-        font-size: 5vw;
+        @media only screen and (max-width: 600px) {
+            font-size: 10vw;
+   }   
+   margin-top: 4px;
+    font-size: 5vw;
     color: #ff742b;
-    margin-left: 10px;
-    margin-right: 10px;
     transition: color 0.2s;
+   padding : 8px;
+   align-items: center;
 }
 a:hover{
-    color: whitesmoke; 
+    color: cadetblue; 
 }
 }
 
 `;
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
 background-color: cadetblue;
-position: fixed;
 display: flex;
 flex-direction: row;
 /* position: absolute; */
-bottom: 0;
-left:0;
-right: 0;
-width: 100%;
+flex: 1;
 padding: 16px;
 justify-content: space-between;
+text-align: center;
 p {
     color: whitesmoke;
     a{

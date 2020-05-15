@@ -52,10 +52,10 @@ function App() {
         </Gitinfo>
         <Contact>
           <p>
-            <b>Phonenumber: </b><a href="tel:+5571992931330">+55(71)99293-1330</a>
+            <b>Phonenumber:</b> &nbsp; <a href="tel:+5571992931330">+55(71)99293-1330</a>
           </p>
           <p>
-            <b>Email: </b><a href="mailto:lucasmatheussc97@gmail.com">lucasmatheussc97@gmail.com</a>
+            <b>Email: </b> &nbsp; <a href="mailto:lucasmatheussc97@gmail.com">lucasmatheussc97@gmail.com</a>
           </p>
         </Contact>
       </Header>
@@ -64,10 +64,11 @@ function App() {
         <Main>
           <h1>Hello there. I'm Lucas.</h1>
           <h3>
-          lets take a <FaWineBottle size={35} /> <FaWineGlass size={15} /> some time.
+          lets take a wine some time.
           </h3>
+          <b><FaWineBottle size={45} /> <FaWineGlass size={25} /></b>
           <hr />
-          <p> Keep contact with me on my social media: </p>
+          <p> Keep contact with me on my social media. </p>
 
           <div className="linkholder">
             <a href="https://www.instagram.com/lucas_mtheus/">
@@ -94,11 +95,7 @@ function App() {
       </PageHolder>
 
       <Footer>
-        <p>
-          This page was build using the{" "}
-          <a href="https://pages.github.com/">
-            <b>GitHub Pages</b>
-          </a>{" "}
+        <p>This page was build using the{" "}<a href="https://pages.github.com/"><b>GitHub Pages</b></a>{" "}
           an excelent frontend server.
         </p>
       </Footer>

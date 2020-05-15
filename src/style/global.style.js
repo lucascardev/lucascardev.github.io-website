@@ -25,7 +25,6 @@ justify-content: space-between;
 `;
 
 export const Gitinfo = styled.div`
-
 @media only screen and (max-width: 600px) {
     flex-direction: row;
   }
@@ -44,6 +43,7 @@ width: 60px;
 align-self: center;
 height: 60px;
 border-radius: 50%;
+display: flex;
 `;
 
 export const Contact = styled.div`
@@ -52,15 +52,18 @@ export const Contact = styled.div`
     padding: 8px;
   }
  align-self: center;
- justify-content: flex-end;
  font-size: 21px;
+ display: flex;
+ flex-direction: column;
 p{
     color: whitesmoke;
     align-self: center;
+    display: flex; 
 }
 a {
     color: whitesmoke;
     transition: color 0.2s;
+    display: flex;
 }
 `;
 
@@ -72,6 +75,7 @@ export const Username = styled.h1`
 color: #ff742b; 
 align-self: center;
 padding: 20px;
+display: flex;
 a{
     color: whitesmoke;
     transition: color 0.2s;
@@ -86,29 +90,32 @@ export const PageHolder = styled.div`
     align-self: center;
     flex:1;
   }
+display: flex;
 padding: 16px;
 `;
 
 export const Main = styled.div`
 @media only screen and (max-width: 600px) {
   }
+display: flex;
 flex: 1;
 padding: 32px;
 background-color: cadetblue;
 color: whitesmoke;
-border-radius: 3px;
+border-radius: 2px;
+flex-direction: column;
 h1 {
-    text-align: center;
+    display: flex;
 }
 h3 {
     margin-top: 16px;
     margin-bottom: 16px;
-    text-align: center;
 }
 p {
     margin-top: 16px;
     text-align: center;
     margin-bottom: 16px;
+    display: flex;
 }
 .linkholder {
     background: whitesmoke;
@@ -120,7 +127,7 @@ p {
         @media only screen and (max-width: 600px) {
             font-size: 10vw;
    }   
-   margin-top: 4px;
+   display: flex;
     font-size: 5vw;
     color: #ff742b;
     transition: color 0.2s;
@@ -144,8 +151,10 @@ padding: 16px;
 justify-content: space-between;
 text-align: center;
 p {
+    
     color: whitesmoke;
     a{
+      
         color: #ff742b;
     }
 }

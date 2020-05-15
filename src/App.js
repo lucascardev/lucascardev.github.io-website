@@ -52,10 +52,10 @@ function App() {
         </Gitinfo>
         <Contact>
           <p>
-            <b>Phonenumber: </b>+5571992931330
+            <b>Phonenumber: </b><a href="tel:+5571992931330">+55(71)99293-1330</a>
           </p>
           <p>
-            <b>Email: </b>lucasmatheussc97@gmail.com
+            <b>Email: </b><a href="mailto:lucasmatheussc97@gmail.com">lucasmatheussc97@gmail.com</a>
           </p>
         </Contact>
       </Header>

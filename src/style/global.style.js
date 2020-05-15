@@ -48,15 +48,19 @@ border-radius: 50%;
 
 export const Contact = styled.div`
 @media only screen and (max-width: 600px) {
-    font-size: 12px;
+    font-size: 16px;
     padding: 8px;
   }
  align-self: center;
  justify-content: flex-end;
- font-size: 16px;
+ font-size: 21px;
 p{
     color: whitesmoke;
     align-self: center;
+}
+a {
+    color: whitesmoke;
+    transition: color 0.2s;
 }
 `;
 

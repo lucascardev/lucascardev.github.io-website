@@ -79,6 +79,9 @@ function App() {
           <b><FaWineBottle size={45} /> <FaWineGlass size={25} /></b>
           <hr />
           <p> Keep contact with me on my social media. </p>
+            
+            
+           <p>Also check my work on <a href="https://www.fiverr.com/s2/e1819fb09e">Fiverr.</a></p>
 
           <div className="linkholder">
             <a href="https://www.instagram.com/lucas_mtheus/">
@@ -108,8 +111,6 @@ function App() {
         <p>This page was build using the{" "}<a href="https://pages.github.com/"><b>GitHub Pages</b></a>{" "}
           an excelent frontend server.
         </p>
-       
-        
       </Footer>
     </Container>
   );

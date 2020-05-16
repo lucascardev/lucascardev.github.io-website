@@ -75,15 +75,20 @@ export const Contact = styled.div`
  font-size: 21px;
  display: flex;
  flex-direction: column;
+
 p{
     color: whitesmoke;
-    align-self: center;
     display: flex; 
+    margin-top: 5px;
 }
 a {
     color: whitesmoke;
     transition: color 0.2s;
     display: flex;
+    text-decoration: none;
+    background: #ff742b;
+    padding: 4px;
+    border-radius: 3px;
 }
 `;
 
@@ -135,7 +140,15 @@ p {
     margin-top: 16px;
     text-align: center;
     margin-bottom: 16px;
-    display: flex;
+    a {
+    color: whitesmoke;
+    transition: color 0.2s;
+    text-decoration: none;
+    background: #ff742b;
+    padding: 4px;
+    border-radius: 3px;
+    margin: 2px;
+    }
 }
 .linkholder {
     background: whitesmoke;

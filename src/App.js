@@ -80,8 +80,6 @@ function App() {
           <hr />
           <p> Keep contact with me on my social media. </p>
             
-            
-           <p>Also check my work on <a href="https://www.fiverr.com/s2/e1819fb09e">Fiverr.</a></p>
 
           <div className="linkholder">
             <a href="https://www.instagram.com/lucas_mtheus/">
@@ -97,6 +95,14 @@ function App() {
               <FaLinkedin />
             </a>
           </div>
+
+          <p>Check my work on Fiverr below  <fieldset><legend>links</legend>
+
+
+<a target='_blank' rel="noopener noreferrer" href="https://www.fiverr.com/s2/e1819fb09e">Web</a> 
+<a target='_blank' rel="noopener noreferrer" href="https://www.fiverr.com/s2/25d78c07c0">Android</a>
+       </fieldset>
+  </p>
 
           <p> Im also a dentistry student, at 6 period... Half of way... </p>
           <div className="linkholder">

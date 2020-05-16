@@ -140,6 +140,24 @@ p {
     margin-top: 16px;
     text-align: center;
     margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    fieldset {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 6px;
+        border-radius:2px;
+        border: 2px solid #ff742b;
+        background: whitesmoke;
+        legend {
+            font-size: 10px;
+            padding: 2px;
+            text-align: left;
+            background: #ff742b;
+            border-radius: 2px;
+        }
+    }
     a {
     color: whitesmoke;
     transition: color 0.2s;

@@ -3,4 +3,5 @@
 <div style="display: flex; margin-bottom: 200px;">
 <img src="https://i.ibb.co/CQtVj6f/png-transparent-react-computer-icons-redux-javascript-others-logo-symmetry-nodejs-thumbnail.png" alt="png-transparent-react-computer-icons-redux-javascript-others-logo-symmetry-nodejs-thumbnail" border="2" width="300">
 </div>
-The main goal is present myself as a developer and share all linked platforms that we use today in one page. Also im using Twakto for real-time chating.
+<p>
+The main goal is present myself as a developer and share all linked platforms that we use today in one page. Also im using Twakto for real-time chating. </p>

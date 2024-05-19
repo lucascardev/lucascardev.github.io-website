@@ -3,11 +3,8 @@ import React, { useEffect, useState } from 'react'
 // import { Scene, PerspectiveCamera, WebGLRenderer, Mesh, MeshBasicMaterial, BoxGeometry } from 'three';
 
 import {
-	FaWineBottle,
-	FaWineGlass,
 	FaGithub,
 	FaInstagram,
-	FaHome,
 	FaLinkedin,
 	FaTooth,
 	FaHtml5,
@@ -17,9 +14,11 @@ import {
 	FaDocker,
 	FaJsSquare,
 	FaGit,
+	FaEye,
+	FaHandPointUp,
 } from 'react-icons/fa'
 
-import { SiTypescript } from 'react-icons/si'
+import { SiTypescript, SiTrailforks } from 'react-icons/si'
 
 import {
 	Container,
@@ -31,12 +30,13 @@ import {
 	Footer,
 	PageHolder,
 	Gitinfo,
+	Info,
+	Repo,
+	Count,
+	Repos,
 } from './style/global.style'
 
 import API from './services/api'
-
-
-  
 
 // const scene = new Scene();
 // const camera = new PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -48,7 +48,6 @@ import API from './services/api'
 // const geometry = new BoxGeometry();
 // const material = new MeshBasicMaterial( { color: 0x00ff00 } );
 // const cube = new Mesh( geometry, material );
-
 
 // //create a smiling face with 3D library
 // const faceGeometry = new BoxGeometry(0.5, 0.5, 0.5);
@@ -100,16 +99,14 @@ import API from './services/api'
 // 	requestAnimationFrame( animate );
 // 	renderer.render( scene, camera );
 //   //show the face
-
-  
 // }
 // animate();
-
 
 function App() {
 	const [avatarimg, setAvatarimg] = useState('')
 	const [username, setUsername] = useState('')
 	const [repos, setRepos] = useState([])
+	const [language, setLanguage] = useState('en')
 
 	useEffect(() => {
 		async function getmyprofile() {
@@ -121,23 +118,59 @@ function App() {
 			setUsername(response.data.login)
 		}
 		getmyprofile()
-
 	}, [])
+
+	useEffect(() => {
+		// Função para verificar e definir o idioma com base na localização do navegador
+		const detectLanguage = () => {
+			const userLanguage = navigator.language || navigator.userLanguage
+			if (userLanguage.startsWith('pt')) {
+				setLanguage('pt') // Define o idioma como português se a localização do navegador for 'pt' ou 'pt-BR'
+			} else {
+				setLanguage('en') // Caso contrário, define o idioma como inglês
+			}
+		}
+
+		detectLanguage() // Chamada da função ao montar o componente
+
+		// Adiciona um event listener para detectar mudanças na localização do navegador
+		window.addEventListener('languagechange', detectLanguage)
+
+		// Remove o event listener ao desmontar o componente para evitar vazamento de memória
+		return () => {
+			window.removeEventListener('languagechange', detectLanguage)
+		}
+	}, []) // A função é chamada apenas uma vez após a montagem do componente
 
 	return (
 		<Container>
 			<Header>
 				<Gitinfo>
 					<Avatar src={avatarimg} />
-					<Username>
-						@
-						<a
-							href='https://github.com/lucascardev'
-							alt='Github profile'
-						>
-							{username}
-						</a>
-					</Username>
+					<div
+						style={{
+							color: 'whitesmoke',
+							display: 'flex',
+							justifyItems: 'center',
+							flexDirection: 'column',
+							alignItems: 'center',
+						}}
+					>
+						<Username>
+							<a
+								href='https://github.com/lucascardev'
+								alt='Github profile'
+								target='_blank'
+								rel='noreferrer'
+							>
+								@{username}
+							</a>
+						</Username>
+						<p>
+							<FaHandPointUp /> Veja meu github acima{' '}
+							<FaHandPointUp />
+						</p>
+					</div>
 				</Gitinfo>
 				<Contact>
 					<p>
@@ -164,50 +197,141 @@ function App() {
 				</div>
 			</Header>
 			<PageHolder>
-				<Main>
-					<h1>Hello there. I'm lucascardev. </h1>
-					<p>
-						I'm a lover of coding, and try to always follows the
-						best pratices for web development. Actualy i have other
-						projects on my github, but i'm not showing them here.
-						One of my work is an Dentistry scheduling application
-						that will try to turn in a business. My story in
-						progamming is pretty new, i have about 2 years of
-						experience. I'm also will start my software engineering
-						degree soon. My main goal is to be a full stack developer.
-					</p>
-					<hr />
-					<p> Keep contact with me on my social media. </p>
-					<div className='linkholder'>
-						<a href='https://www.instagram.com/lucas_mtheus/'>
-							<FaInstagram />
-						</a>
-						<a href='https://github.com/lucascardev'>
-							<FaGithub />
-						</a>
-						<a href='https://lightupweb.mailchimpsites.com/'>
-							<FaHome />
-						</a>
-						<a href='https://www.linkedin.com/in/lucas-matheus-s-cardoso-266884169/'>
-							<FaLinkedin />
-						</a>
-					</div>
+				{language === 'en' && (
+					<Main>
+						<h1>Hello there. I'm lucascardev.</h1>
+						<p>
+							Certainly! Here’s the rephrased version of your text
+							in English: "I’m a programming enthusiast dedicated
+							to following best practices for web development.
+							With a passion for creating innovative solutions, I
+							maintain several projects on my GitHub. One of them
+							is a dental appointment scheduling application that
+							I hope will become a standout product. I’m
+							constantly seeking improvement and remain committed
+							to my journey of continuous learning. I actively
+							look for opportunities to broaden my horizons and
+							deepen my understanding of programming complexities.
+							With an unwavering commitment to personal and
+							professional growth, I’m determined to reach new
+							levels of excellence.
+						</p>
+						<hr />
+						<p> Keep contact with me on my social media. </p>
+						<div className='linkholder'>
+							<a href='https://www.instagram.com/lucas_mtheus/'>
+								<FaInstagram />
+							</a>
+							<a href='https://github.com/lucascardev'>
+								<FaGithub />
+							</a>
 
-					<p> Im also a dentistry student, at last period... </p>
-					<div className='linkholder'>
-						<a href='https://www.instagram.com/odontosemcomplicacao/'>
-							<FaTooth />
-						</a>
-					</div>
-					{repos.map((repo) => (
-						<div>
-							<h3>Repo - {repo.description}</h3>
-							<p key={repo.id}>
-								<a href={repo.html_url}>{repo.full_name}</a>
-							</p>
+							<a href='https://www.linkedin.com/in/lucascardev'>
+								<FaLinkedin />
+							</a>
 						</div>
-					))}
-				</Main>
+
+						<p> Im also a dentistry</p>
+						<div
+							className='linkholder'
+							style={{ marginBottom: 30 }}
+						>
+							<a href='https://www.instagram.com/dr.lucasmscardoso/'>
+								<FaTooth />
+							</a>
+						</div>
+						<Repos>
+							{repos.map((repo) => (
+								<Repo>
+									<h3>Repo - {repo.description}</h3>
+									<p key={repo.id}>
+										<a href={repo.html_url}>
+											{repo.full_name}
+										</a>
+									</p>
+									<p>{repo.language}</p>
+									<Info>
+										<Count>
+											<SiTrailforks />
+											{repo.forks}
+										</Count>{' '}
+										<Count>
+											<FaEye />
+											{repo.watchers}
+										</Count>
+									</Info>
+								</Repo>
+							))}
+						</Repos>
+					</Main>
+				)}
+				{language === 'pt' && (
+					<Main>
+						<h1>Olá! Eu sou o lucascardev.</h1>
+						<p>
+							Sou um entusiasta da programação que adora seguir as
+							melhores práticas para o desenvolvimento web. Tenho
+							uma paixão por criar soluções inovadoras e mantenho
+							vários projetos no meu GitHub. Um deles é um
+							aplicativo de agendamento odontológico que espero
+							que se torne um produto de destaque. Estou sempre em
+							busca de aprimoramento e continuo minha jornada de
+							aprendizado. Busco constantemente oportunidades para
+							expandir meus horizontes e aprofundar minha
+							compreensão das complexidades da programação. Com um
+							compromisso inabalável com o crescimento pessoal e
+							profissional, estou determinado a alcançar novos
+							patamares de excelência.
+						</p>
+						<hr />
+						<p> Me siga nas redes sociais </p>
+						<div className='linkholder'>
+							<a href='https://www.instagram.com/lightup.marketingdigital/'>
+								<FaInstagram />
+							</a>
+							<a href='https://github.com/lucascardev'>
+								<FaGithub />
+							</a>
+
+							<a href='https://www.linkedin.com/in/lucascardev'>
+								<FaLinkedin />
+							</a>
+						</div>
+						<hr />
+						{/* <p> Também sou dentista</p>
+						<div
+							className='linkholder'
+							style={{ marginBottom: 30 }}
+						>
+							<a href='https://www.instagram.com/dr.lucasmscardoso/'>
+								<FaTooth />
+							</a>
+						</div> */}
+						<Repos>
+							{repos.map((repo) => (
+								<Repo>
+									<h3>Repo - {repo.description}</h3>
+									<p key={repo.id}>
+										<a href={repo.html_url}>
+											{repo.full_name}
+										</a>
+									</p>
+									<p>{repo.language}</p>
+									<Info>
+										<Count>
+											<SiTrailforks />
+											{repo.forks}
+										</Count>{' '}
+										<Count>
+											<FaEye />
+											{repo.watchers}
+										</Count>
+									</Info>
+								</Repo>
+							))}
+						</Repos>
+					</Main>
+				)}
 			</PageHolder>
 
 			<Footer>
